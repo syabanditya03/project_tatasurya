@@ -6,6 +6,22 @@ static int m=0,M=0,v=0,V=0,E=0,e=0,r=0,R=0,j=0,J=0,s=0,S=0,U=0,u=0,n=0,N=0,X=0,z
 static GLint axis=2;
 GLfloat diffuseMaterial[4]={0.5,0.5,0.5,1.0};
 
+void myinit(void)
+{
+glClearColor(0.0,0.0,0.0,0.0);
+glShadeModel(GL_SMOOTH);
+glEnable(GL_DEPTH_TEST);
+GLfloat mat_specular[]={1.0,1.0,1.0,1.0};
+GLfloat light_position[]={1.0,1.0,1.0,0.0};
+glMaterialfv(GL_FRONT,GL_DIFFUSE,diffuseMaterial);
+glMaterialfv(GL_FRONT,GL_SPECULAR,mat_specular);
+glMaterialf(GL_FRONT,GL_SHININESS,25.0);
+glEnable(GL_LIGHTING);
+glEnable(GL_LIGHT0);
+glLightfv(GL_LIGHT0,GL_POSITION,light_position);
+glColorMaterial(GL_FRONT,GL_DIFFUSE);
+glEnable(GL_COLOR_MATERIAL);
+}
 
 int main(int argc,char **argv)
 {
