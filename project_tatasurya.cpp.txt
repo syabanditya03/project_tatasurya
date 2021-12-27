@@ -136,10 +136,8 @@ glScalef(0.60,0.0,2.5);
 glColor3f (7.5, 9.5, 2.0);
 glutSolidSphere (0.2, 12, 6);
 glPopMatrix();/*draw comet*/
-}
 
-int main(int argc,char **argv)
-{glPushMatrix();
+glPushMatrix();
 glTranslatef(0.0,-2.0,0.0);
 gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
 glRotatef((GLfloat)b,0.0,0.0,0.0);
@@ -864,6 +862,9 @@ glColor3f(4.3,3.5,1.0);
 glutSolidSphere(0.04,20,8);
 glPopMatrix();
 glutSwapBuffers();
+}
+
+int main(int argc,char **argv)
 glutInit(&argc,argv);
 glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGB|GLUT_DEPTH);
 glutInitWindowSize(500,500);
